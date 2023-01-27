@@ -26,8 +26,9 @@ public class UserDAO {
          preparedStatement.setString(1, userIdentification);
          resultSet = preparedStatement.executeQuery();
          
-         resultSet.next();
-         result = resultSet.getInt(1) == 0;
+         if(resultSet.next()) {        	 
+        	 result = resultSet.getInt(1) == 0;
+         }
          
       } catch (SQLException e) {
          System.out.println("checkId(String) SQL¹® ¿À·ù");

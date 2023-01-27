@@ -1,14 +1,17 @@
 package view;
 
 import dao.BoardDAO;
+import dao.ReplyDAO;
 import dao.UserDAO;
 import domain.BoardDTO;
 import domain.BoardVO;
+import domain.ReplyDTO;
+import domain.ReplyVO;
 import domain.UserVO;
 
 public class Test {
    public static void main(String[] args) {
-      UserDAO userDAO = new UserDAO();
+//      UserDAO userDAO = new UserDAO();
 //      if(userDAO.checkId("hds1234")) {
 //         System.out.println("사용 가능한 아이디");
 //         return;
@@ -20,7 +23,7 @@ public class Test {
       
 //      [실습] 메소드 전체 검증
 //      회원가입
-      UserVO userVO = new UserVO();
+//      UserVO userVO = new UserVO();
 //      userVO.setUserIdentification("lss1234");
 //      userVO.setUserName("이순신");
 //      userVO.setUserPassword("1234");
@@ -106,7 +109,7 @@ public class Test {
 //      회원 탈퇴
 //      userDAO.delete();
 //      ==========================================================================
-      BoardDAO boardDAO = new BoardDAO();
+//      BoardDAO boardDAO = new BoardDAO();
       
 //      게시글 추가
 //      BoardVO boardVO = new BoardVO();
@@ -145,6 +148,39 @@ public class Test {
       
 //      게시글 전체 조회
 //      boardDAO.selectAll().stream().map(BoardDTO::toString).forEach(System.out::println);
+//      ==========================================================================
+      UserDAO userDAO = new UserDAO();
+      BoardDAO boardDAO = new BoardDAO();
+      ReplyDAO replyDAO = new ReplyDAO();
+      
+      if(userDAO.login("phgs1234", "7890")) {
+         System.out.println("로그인 성공");
+      }else {
+         System.out.println("로그인 실패");
+      }
+      
+      BoardDTO boardDTO = boardDAO.select(1L);
+      System.out.println(boardDTO);
+      
+//      댓글 추가
+//      ReplyVO replyVO = new ReplyVO();
+//      replyVO.setBoardId(boardDTO.getBoardId());
+//      replyVO.setReplyContent("두번째 댓글");
+      
+//      replyDAO.insert(replyVO);
+      
+//      대댓글 추가
+//      ReplyVO replyVO = new ReplyVO();
+//      replyVO.setBoardId(boardDTO.getBoardId());
+////      replyVO.setReplyContent("첫번째 댓글의 첫번째 대댓글");
+////      replyVO.setReplyContent("첫번째 댓글의 두번째 대댓글");
+//      replyVO.setReplyContent("두번째 댓글의 첫번째 대댓글");
+//      
+//      replyDAO.insert(replyVO, 5L);
+      
+//      댓글 전체 조회
+//      replyDAO.selectAll().stream().filter(dto -> dto.getReplyGroup() == 1).map(ReplyDTO::toString).forEach(System.out::println);
+//      replyDAO.selectAll().stream().filter(dto -> dto.getReplyGroup() == 5).map(ReplyDTO::toString).forEach(System.out::println);
    }
 }
 

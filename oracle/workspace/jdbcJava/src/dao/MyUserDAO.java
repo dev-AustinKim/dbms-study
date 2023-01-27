@@ -10,11 +10,10 @@ import domain.UserVO;
 
 public class MyUserDAO {
 
-	public Connection connection;   // 연결 객체를 담아줄 전역 변수
-	//   public Statement statement;      // 이게 별로여서 preparedStatement 사용함
+	public Connection connection;  // 연결 객체를 담아줄 전역 변수
+	//   public Statement statement;     // 이게 별로여서 preparedStatement 사용함
 	public PreparedStatement preparedStatement;   // 쿼리 관리 객체
-	public ResultSet resultSet;      // 결과 테이블 객체
-
+	public ResultSet resultSet;  // 결과 테이블 객체
 	private final int KEY = 3; // 암호화를 위한 키값.
 
 	//   아이디 중복검사
@@ -25,7 +24,7 @@ public class MyUserDAO {
 		try {
 			preparedStatement = connection.prepareStatement(query);
 			preparedStatement.setString(1, userIdentification);
-//			 select만 executeQuery, 나머지들은 executeUpdate 사용해야한다. 
+//			select만 executeQuery, 나머지들은 executeUpdate 사용해야한다. 
 //			executeQuery는 조회를 하기 때문에 그 조회한 결과를 보통 2차원 배열인 resultSet에 넣어준 후 사용한다.
 //			executeUpdate는 업데이트를 하기 때문에 그 결과를 resultSet에 넣지 않고 그냥 executeUpdate 사용한다.
 			resultSet = preparedStatement.executeQuery();   
