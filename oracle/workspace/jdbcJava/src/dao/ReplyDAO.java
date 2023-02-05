@@ -63,7 +63,8 @@ public class ReplyDAO {
 		String query = "INSERT INTO TBL_REPLY"
 				+ "(REPLY_ID, REPLY_CONTENT, USER_ID, BOARD_ID, REPLY_GROUP, REPLY_DEPTH) "
 				+ "VALUES(SEQ_REPLY.NEXTVAL, ?, ?, ?, SEQ_REPLY.CURRVAL, 0)";
-
+		
+		
 		connection = DBConnecter.getConnection();
 		try {
 			preparedStatement = connection.prepareStatement(query);

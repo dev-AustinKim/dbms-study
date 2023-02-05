@@ -13,7 +13,9 @@ public class UserVO {
 	private String userBirth; // 생일
 	private String userGender; // 성별
 	private String userRecommenderId; // 추천인 수
-//	private Long recommendCount; // 추천 수
+	//   private Long recommendCount; // 추천 수
+	private Long followingCount; // 팔로잉 수
+	private Long followerCount; // 팔로잉 수
 
 	public UserVO() {;}
 
@@ -104,32 +106,60 @@ public class UserVO {
 	public void setUserRecommenderId(String userRecommenderId) {
 		this.userRecommenderId = userRecommenderId;
 	}
-//	public Long getRecommendCount() {
-//		return recommendCount;
-//	}
-//
-//	public void setRecommendCount(Long recommendCount) {
-//		this.recommendCount = recommendCount;
-//	}
+	//   public Long getRecommendCount() {
+	//      return recommendCount;
+	//   }
+	//
+	//   public void setRecommendCount(Long recommendCount) {
+	//      this.recommendCount = recommendCount;
+	//   }
+
+	public Long getFollowingCount() {
+		return followingCount;
+	}
+
+	public void setFollowingCount(Long followingCount) {
+		this.followingCount = followingCount;
+	}
+
+	public Long getFollowerCount() {
+		return followerCount;
+	}
+
+	public void setFollowerCount(Long followerCount) {
+		this.followerCount = followerCount;
+	}
 
 	@Override
 	public String toString() {
 		return "UserVO [userId=" + userId + ", userIdentification=" + userIdentification + ", userName=" + userName
 				+ ", userPassword=" + userPassword + ", userPhone=" + userPhone + ", userNickname=" + userNickname
 				+ ", userEmail=" + userEmail + ", userAddress=" + userAddress + ", userBirth=" + userBirth
-				+ ", userGender=" + userGender + ", userRecommenderId=" + userRecommenderId + "]";
+				+ ", userGender=" + userGender + ", userRecommenderId=" + userRecommenderId + ", followingCount="
+				+ followingCount + ", followerCount=" + followerCount + "]";
 	}
 
-//	@Override
-//	public String toString() {
-//		return "UserVO [userId=" + userId + ", userIdentification=" + userIdentification + ", userName=" + userName
-//				+ ", userPassword=" + userPassword + ", userPhone=" + userPhone + ", userNickname=" + userNickname
-//				+ ", userEmail=" + userEmail + ", userAddress=" + userAddress + ", userBirth=" + userBirth
-//				+ ", userGender=" + userGender + ", userRecommenderId=" + userRecommenderId + ", recommendCount="
-//				+ recommendCount + "]";
-//	}
 	
-	
+
+
+	//   @Override
+	//   public String toString() {
+	//      return "UserVO [userId=" + userId + ", userIdentification=" + userIdentification + ", userName=" + userName
+	//            + ", userPassword=" + userPassword + ", userPhone=" + userPhone + ", userNickname=" + userNickname
+	//            + ", userEmail=" + userEmail + ", userAddress=" + userAddress + ", userBirth=" + userBirth
+	//            + ", userGender=" + userGender + ", userRecommenderId=" + userRecommenderId + "]";
+	//   }
+
+	//   @Override
+	//   public String toString() {
+	//      return "UserVO [userId=" + userId + ", userIdentification=" + userIdentification + ", userName=" + userName
+	//            + ", userPassword=" + userPassword + ", userPhone=" + userPhone + ", userNickname=" + userNickname
+	//            + ", userEmail=" + userEmail + ", userAddress=" + userAddress + ", userBirth=" + userBirth
+	//            + ", userGender=" + userGender + ", userRecommenderId=" + userRecommenderId + ", recommendCount="
+	//            + recommendCount + "]";
+	//   }
+
+
 
 
 }
